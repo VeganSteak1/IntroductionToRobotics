@@ -19,6 +19,7 @@ This repository is a collection of my coursework, homework assignments, and pers
 Feel free to explore the folders and projects available in this repository. Here are a few quick pointers to help you navigate:
 
 - **Homework:** Check the 'Homework' directory for my homework submissions.
-- **Projects:** The 'Projects' directory contains the larger, more creative undertakings.
+- **Projects:** The 'Projects' directory contains the larger, more creative undertakings and the final project.
+- **Labs:** The 'Labs' directory contains the code that we do in the lab.
 - **Commits:** If you're curious about my learning process, take a look at the commit history.
 
