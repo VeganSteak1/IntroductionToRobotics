@@ -24,7 +24,8 @@ Feel free to explore the folders and projects available in this repository. Here
 - **Commits:** If you're curious about my learning process, take a look at the commit history.
 
 ## Homework 1
--  **This is the sanity check, I've attached the code and I will attach a picture in the folder too**
+-  **This is the sanity check**, I've attached the code and I will attach a picture in the folder too
+-  I have three potentiometers that control the intensity of three LED lights
 -  My RGB led wasnt working so i've used three LED's, the result is the same basically
   
 
