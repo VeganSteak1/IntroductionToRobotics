@@ -23,3 +23,8 @@ Feel free to explore the folders and projects available in this repository. Here
 - **Labs:** The 'Labs' directory contains the code that we do in the lab.
 - **Commits:** If you're curious about my learning process, take a look at the commit history.
 
+## Homework 1
+-  **This is the sanity check, I've attached the code and I will attach a picture in the folder too**
+-  My RGB led wasnt working so i've used three LED's, the result is the same basically
+  
+
