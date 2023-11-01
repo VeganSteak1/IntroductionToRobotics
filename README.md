@@ -27,5 +27,5 @@ Feel free to explore the folders and projects available in this repository. Here
 -  **This is the sanity check**, I've attached the code and I will attach a picture in the folder too
 -  I have three potentiometers that control the intensity of three LED lights
 -  My RGB led wasnt working so i've used three LED's, the result is the same basically
-  
+-  Cool video that shows how it works: https://youtube.com/shorts/XgWn5MQpkdY?si=5zMGLWPp5IPT6B9z
 
