@@ -29,3 +29,6 @@ Feel free to explore the folders and projects available in this repository. Here
 -  My RGB led wasnt working so i've used three LED's, the result is the same basically
 -  Cool video that shows how it works: https://youtube.com/shorts/XgWn5MQpkdY?si=5zMGLWPp5IPT6B9z
 
+## Homework 2
+- An elevator simulator, it *kinda* works
+- I've attached the code and a video of it working 
