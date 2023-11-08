@@ -31,4 +31,7 @@ Feel free to explore the folders and projects available in this repository. Here
 
 ## Homework 2
 - An elevator simulator, it *kinda* works
-- I've attached the code and a video of it working 
+- I've attached the code and a video of it working
+
+## Homework 3
+- A joystick that controls a 7 segment display
