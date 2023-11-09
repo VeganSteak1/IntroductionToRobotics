@@ -39,7 +39,7 @@ Feel free to explore the folders and projects available in this repository. Here
 
 ## Homework 4
 <details>
-  <summary>###Lap Counter Arduino</summary>
+  <summary><b>Lap Counter Arduino</b></summary>
 
   This Arduino code is designed for a lap counter application using a 4-digit 7-segment display and a button to increment the lap count.
 
@@ -72,5 +72,5 @@ Feel free to explore the folders and projects available in this repository. Here
     - `activateDisplay(int displayNumber)`: Activates a specific digit in the 7-segment display.
     - `writeNumber(int number)`: Writes the lap number to the display, handling multiple digits.
 
-  For more detailed information, please refer to the code comments and documentation.
+  - **Video:** https://youtube.com/shorts/dnN_3xZa4Kc?si=Ch-ednn0_5D4H-HE
 </details>
