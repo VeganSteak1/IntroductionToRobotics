@@ -31,4 +31,46 @@ Feel free to explore the folders and projects available in this repository. Here
 
 ## Homework 2
 - An elevator simulator, it *kinda* works
-- I've attached the code and a video of it working 
+- I've attached the code and a video of it working
+
+## Homework 3
+- A joystick that controls a 7 segment display
+
+
+## Homework 4
+<details>
+  <summary><b>Lap Counter Arduino</b></summary>
+
+  This Arduino code is designed for a lap counter application using a 4-digit 7-segment display and a button to increment the lap count.
+
+  ### Components
+
+  - **Hardware:**
+    - 4-digit 7-segment display with specific pin connections.
+    - Button for lap counting.
+    - Debounce logic to prevent button noise.
+
+  ### Functionality
+
+  - The code counts laps and displays the lap number on the 7-segment display.
+  - It utilizes a button with debounce logic for lap counting.
+  - The lap number is displayed on the 4-digit 7-segment display.
+
+  ### Code Structure
+
+  - **Constants and Pin Definitions:** The code defines pin connections and arrays for 7-segment display segments and encodings.
+
+  - **Setup:** Initializes pin modes, sets an initial display state, and initializes the Serial communication.
+
+  - **Loop:** 
+    - Handles button press and debounce.
+    - Updates the lap count and number displayed on the 7-segment display.
+    - Prints the combined lap number and value on the Serial monitor.
+
+  - **Functions:**
+    - `writeReg(int digit)`: Writes data to the 7-segment display.
+    - `activateDisplay(int displayNumber)`: Activates a specific digit in the 7-segment display.
+    - `writeNumber(int number)`: Writes the lap number to the display, handling multiple digits.
+
+  - **Video:** https://youtube.com/shorts/dnN_3xZa4Kc?si=Ch-ednn0_5D4H-HE
+</details>
