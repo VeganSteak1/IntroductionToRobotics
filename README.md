@@ -35,3 +35,20 @@ Feel free to explore the folders and projects available in this repository. Here
 
 ## Homework 3
 - A joystick that controls a 7 segment display
+
+# Homework 4
+
+This Arduino code is designed for a lap counter application using a 4-digit 7-segment display and a button to increment the lap count.
+
+## Components
+
+- **Hardware:**
+  - 4-digit 7-segment display with specific pin connections.
+  - Button for lap counting.
+  - Debounce logic to prevent button noise.
+
+## Functionality
+
+- The code counts laps and displays the lap number on the 7-segment display.
+- It utilizes a button with debounce logic for lap counting.
+- The lap number is displayed on the first digit of the 7-segment display.
