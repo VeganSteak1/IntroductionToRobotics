@@ -29,13 +29,23 @@ byte byteEncodings[encodingsNumber] = {
 unsigned long lastIncrement = 0;
 unsigned long delayCount = 100;
 unsigned long number = 0;
-const int buttonPin = 2;  
-
+const int buttonPin = 2;
+const int pauseButtonPin = 13;
+const int newButtonPin = 8; // New button on pin 8
+bool isPaused = false;
 int buttonState = LOW;
 int lastButtonState = LOW;
 unsigned long lastDebounceTime = 0;
 unsigned long debounceDelay = 50;
 int lapNumber = 0;
+int pauseButtonState = LOW;
+int lastPauseButtonState = LOW;
+unsigned long lastPauseDebounceTime = 0;
+int buttonPresses[] = {0,0,0,0,0,0,0,0,0,0};
+int buttonPressIndex = 0;
+int newButtonState = LOW;
+int lastNewButtonState = LOW;
+unsigned long lastNewDebounceTime = 0;
 
 void setup() {
   pinMode(latchPin, OUTPUT);
@@ -48,31 +58,69 @@ void setup() {
   writeReg(B00000001);
   digitalWrite(displayDigits[2], LOW);
   pinMode(buttonPin, INPUT_PULLUP);
+  pinMode(pauseButtonPin, INPUT_PULLUP);
+  pinMode(newButtonPin, INPUT_PULLUP); 
   Serial.begin(9600);
 }
 
 void loop() {
   int reading = digitalRead(buttonPin);
-  if (reading != lastButtonState) {
-    lastDebounceTime = millis();
+
+  if (!isPaused) {
+    if (reading != lastButtonState) {
+      lastDebounceTime = millis();
+    }
+    if ((millis() - lastDebounceTime) > debounceDelay) {
+      if (reading != buttonState) {
+        buttonState = reading;
+        if (buttonState == LOW) {
+          buttonPresses[lapNumber++] = number;
+          number = 0;
+        }
+      }
+    }
+    lastButtonState = reading;
   }
-  if ((millis() - lastDebounceTime) > debounceDelay) {
-    if (reading != buttonState) {
-      buttonState = reading;
-      if (buttonState == LOW) {
-        number = 0;
-        lapNumber++;
+
+  int pauseButtonReading = digitalRead(pauseButtonPin);
+  if (pauseButtonReading != lastPauseButtonState) {
+    lastPauseDebounceTime = millis();
+  }
+  if ((millis() - lastPauseDebounceTime) > debounceDelay) {
+    if (pauseButtonReading != pauseButtonState) {
+      pauseButtonState = pauseButtonReading;
+      if (pauseButtonState == LOW) {
+        isPaused = !isPaused;
       }
     }
   }
-  lastButtonState = reading;
+  lastPauseButtonState = pauseButtonReading;
 
-  if (millis() - lastIncrement > delayCount) {
-    number++;
-    number %= 1000;
-    lapNumber %= 10;
-    lastIncrement = millis();
+  int newButtonReading = digitalRead(newButtonPin); 
+    if (newButtonReading != lastNewButtonState) {
+      lastNewDebounceTime = millis();
+    }
+    if ((millis() - lastNewDebounceTime) > debounceDelay) {
+      if (newButtonReading != newButtonState) {
+        newButtonState = newButtonReading;
+        if (newButtonState == LOW && isPaused) {
+          if(lapNumber>1)
+          {lapNumber--;
+          number = buttonPresses[lapNumber];}
+        }
+      }
+    }
+    lastNewButtonState = newButtonReading;
+
+  if (!isPaused) {
+    if (millis() - lastIncrement > delayCount) {
+      number++;
+      number %= 1000;
+      lapNumber %= 10;
+      lastIncrement = millis();
+    }
   }
+
   Serial.println(number + lapNumber * 1000);
   writeNumber(number + lapNumber * 1000);
 }
