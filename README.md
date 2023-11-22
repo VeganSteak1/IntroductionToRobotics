@@ -55,6 +55,8 @@ Feel free to explore the folders and projects available in this repository. Here
   - The code counts laps and displays the lap number on the 7-segment display.
   - It utilizes a button with debounce logic for lap counting.
   - The lap number is displayed on the 4-digit 7-segment display.
+  - It has a pause button to pause the current lap
+  - It has a previous lap to return to the previous lap time
 
   ### Code Structure
 
@@ -72,5 +74,5 @@ Feel free to explore the folders and projects available in this repository. Here
     - `activateDisplay(int displayNumber)`: Activates a specific digit in the 7-segment display.
     - `writeNumber(int number)`: Writes the lap number to the display, handling multiple digits.
 
-  - **Video:** https://youtube.com/shorts/dnN_3xZa4Kc?si=Ch-ednn0_5D4H-HE
+  - [**Video:**](https://youtu.be/dszb2ST7NYs) 
 </details>
