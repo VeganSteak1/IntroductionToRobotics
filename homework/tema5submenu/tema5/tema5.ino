@@ -10,13 +10,14 @@ int mappedValue;
 int photocellValue;
 int duration;
 int distance;
+int  saveDis;
 unsigned long previousMillis = 0;
 const long interval = 5000;  // 5 seconds
 bool submenuActive = false;
 unsigned long submenuStartTime = 0;
 
 const int EEPROM_ADDR_LDR = 100;        // EEPROM address to store LDR value
-const int EEPROM_ADDR_DISTANCE = 101;   // EEPROM address to store distance value
+const int EEPROM_ADDR_DISTANCE = 102;   // EEPROM address to store distance value
 
 void setup(void) {
   Serial.begin(9600);
@@ -31,7 +32,7 @@ void saveValuesToEEPROM() {
   // Save LDR value to EEPROM
   EEPROM.update(EEPROM_ADDR_LDR, mappedValue);
   // Save distance value to EEPROM
-  EEPROM.update(EEPROM_ADDR_DISTANCE, distance);
+  EEPROM.update(EEPROM_ADDR_DISTANCE,saveDis);
   Serial.println("Values saved to EEPROM");
 }
 
@@ -44,8 +45,8 @@ void readValuesFromEEPROM() {
 
   // Read distance value from EEPROM
   int savedDistanceValue;
-  EEPROM.read(EEPROM_ADDR_DISTANCE);
-  savedDistanceValue = Serial.print("Saved Distance Value: ");
+  savedDistanceValue = EEPROM.read(EEPROM_ADDR_DISTANCE);
+  Serial.print("Saved Distance Value: ");
   Serial.println(savedDistanceValue);
 }
 
@@ -100,6 +101,7 @@ void distanceMeasurement() {
     distance = duration * 0.034 / 2;
     Serial.print("Distance: ");
     Serial.println(distance);
+    saveDis=distance;
   } else {
     // 5 seconds have passed, exit submenu
     submenuActive = false;
