@@ -76,3 +76,11 @@ Feel free to explore the folders and projects available in this repository. Here
 
   - [**Video:**](https://youtu.be/dszb2ST7NYs) 
 </details>
+
+## Homework 5
+- Submenu with A, B, C
+- A.1 read LDR, light LED in function of light intensity
+- A.2 read distance
+- B saves values manually, so We dont wear out the memory
+- C reads the values.
+- [**Video**](https://youtube.com/shorts/JY9qRWliEEI?si=yxOqprpQePqPYR1S)
