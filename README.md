@@ -117,4 +117,6 @@ This Arduino sketch implements a simple LED maze game using a 8x8 LED matrix dis
 ## Libraries Used
 - LedControl: Used for controlling the LED matrix.
 
+[Video](https://youtu.be/NIUGpuIC7JM?si=gzG1mw3JM-W-lebe)
+
 </details>
