@@ -84,3 +84,37 @@ Feel free to explore the folders and projects available in this repository. Here
 - B saves values manually, so We dont wear out the memory
 - C reads the values.
 - [**Video**](https://youtube.com/shorts/JY9qRWliEEI?si=yxOqprpQePqPYR1S)
+
+## Homework 6
+<details>
+<summary><b>LED Maze Game</b></summary>
+
+This Arduino sketch implements a simple LED maze game using a 8x8 LED matrix display and a joystick for navigation. The maze is represented by a 2D array (`wall`) where 1s represent walls, and the player can move through the open spaces.
+
+## Hardware Requirements
+- 8x8 LED matrix display
+- Joystick
+- Arduino board
+
+## Pin Configuration
+- DIN (Data In): 12
+- CS (Chip Select): 10
+- CLK (Clock): 11
+- Joystick X-axis: A0
+- Joystick Y-axis: A1
+- Button: 2
+
+## How to Play
+1. The player navigates through the maze using the joystick.
+2. Pressing the button removes walls in the player's vicinity.
+3. The player's position blinks for visibility.
+
+## Code Structure
+- The maze is initialized in the `wall` array.
+- The `joystick()` function handles player movement and button actions.
+- The game loop periodically updates the display based on joystick input.
+
+## Libraries Used
+- LedControl: Used for controlling the LED matrix.
+
+</details>
